@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+
+    <div data-role="page">
+        <div data-role="header">
+            <h1>Form slider</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <form method="post" action="/action_page_post.php" class="d-flex mb-lg-5">
+                <div data-role="rangeslider">
+                    <label for="price-min">Price:</label>
+                    <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+                    <label for="price-max">Price:</label>
+                    <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+                </div>
+                <div class="twocontainer">
+                    <select class="browser-default custom-select" aria-label="Default select example"
+                        name="filterservice" required>
+                        <option value="Adventure Sports">Adventure Sports</option>
+                        <option value="Ambulance">Ambulance</option>
+                        <option value="Artist Manager">Artist Manager</option>
+                        <option value="AV / Film Production">AV / Film Production</option>
+                        <option value="Balloon Decor">Balloon Decor</option>
+                        <option value="Band">Band</option>
+                        <option value="Black Cloth">Black Cloth</option>
+                        <option value="Bouncers / Security">Bouncers / Security</option>
+                        <option value="Carnival Setup">Carnival Setup</option>
+                        <option value="Carpenter Contractor">Carpenter Contractor</option>
+                        <option value="Carpet">Carpet</option>
+                        <option value="Dance Troupe">Dance Troupe</option>
+                        <option value="Digital Activities">Digital Activities</option>
+                        <option value="Digital Printer">Digital Printer</option>
+                        <option value="Dj">Dj</option>
+                        <option value="Drone Vendor">Drone Vendor</option>
+                        <option value="Electrician">Electrician</option>
+                        <option value="Event Manager">Event Manager</option>
+                        <option value="F&B">F&B</option>
+                        <option value="Fabricator">Fabricator</option>
+                        <option value="Fancy Dress">Fancy Dress</option>
+                        <option value="Female Mc">Female Mc</option>
+                        <option value="Female Singer">Female Singer</option>
+                        <option value="Florist">Florist</option>
+                        <option value="Folk Artist">Folk Artist</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Generator">Generator</option>
+                        <option value="Giveaway">Giveaway</option>
+                        <option value="Gobo">Gobo</option>
+                        <option value="Invitation Cards">Invitation Cards</option>
+                        <option value="Iron Work">Iron Work</option>
+                        <option value="Lobour Contractor">Labour Contractor</option>
+                        <option value="Laser Show">Laser Show</option>
+                        <option value="LED">LED</option>
+                        <option value="Light">Light</option>
+                        <option value="Male Mc">Male Mc</option>
+                        <option value="Male Singer">Singer</option>
+                        <option value="Manpower Provider">Manpower Provider</option>
+                        <option value="Motivational Speaker">Motivational Speaker</option>
+                        <option value="Offset Printer">Offset Printer</option>
+                        <option value="Package & Movers">Package & Movers</option>
+                        <option value="Painter Contractor">Painter Contractor</option>
+                        <option value="Permisions">Permisions</option>
+                        <option value="Photographer">Photographer</option>
+                        <option value="Projection">Projection</option>
+                        <option value="Props">Props</option>
+                        <option value="Pyrotechnics">Pyrotechnics</option>
+                        <option value="Sound">Sound</option>
+                        <option value="SS Work">SS work</option>
+                        <option value="Standup Comedian">Standup Comedian</option>
+                        <option value="Super loo">Super loo</option>
+                        <option value="T-Shirts">T-Shirts</option>
+                        <option value="Team">Team Building</option>
+                        <option value="Tentage">Tentage</option>
+                        <option value="Thermocol Work">Thermocol Work</option>
+                        <option value="Transporter">Transporter</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Trophies">Trophies</option>
+                        <option value="Turntable">Turntable</option>
+                        <option value="Vanity Van">Vanity Van</option>
+                        <option value="Videographer">Videographer</option>
+                        <option value="Walky Talky">Walky Talky</option>
+                        <option value="White Flex Roll">White Flex Roll</option>
+                        <option value="Wood Material">Wood Material</option>
+                        <option value="optin not available">option not available</option>
+                    </select><br><br>
+                    <select class="browser-default custom-select ml-2" name="filtercity">
+                        <option selected>Country</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lonavla">Lonavla</option>
+                        <option value="Kolkata">Kolkata</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-large btn-info text-capitalize ml-lg-3" type="submit">submit</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

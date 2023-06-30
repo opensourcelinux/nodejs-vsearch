@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Form</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    {{!--
+    <link rel="stylesheet" href="assets/css/style.css"> --}}
+    {{!--
+    <link rel="stylesheet" href="edit.css"> --}}
+    <style>
+        body {
+            background-color: #dee9ff;
+        }
+
+        .registration-form {
+            padding: 50px 0;
+        }
+
+        .registration-form form {
+            background-color: #fff;
+            max-width: 600px;
+            margin: auto;
+            padding: 50px 70px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+        }
+
+        .registration-form .form-icon {
+            text-align: center;
+            background-color: #5891ff;
+            border-radius: 50%;
+            font-size: 40px;
+            color: white;
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            margin-bottom: 50px;
+            line-height: 100px;
+        }
+
+        .registration-form .item {
+            border-radius: 20px;
+            margin-bottom: 25px;
+            padding: 10px 20px;
+        }
+
+        .registration-form .create-account {
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #5791ff;
+            border: none;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .registration-form .social-media {
+            max-width: 600px;
+            background-color: #fff;
+            margin: auto;
+            padding: 35px 0;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            color: #9fadca;
+            border-top: 1px solid #dee9ff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+        }
+
+        .registration-form .social-icons {
+            margin-top: 30px;
+            margin-bottom: 16px;
+        }
+
+        .registration-form .social-icons a {
+            font-size: 23px;
+            margin: 0 3px;
+            color: #5691ff;
+            border: 1px solid;
+            border-radius: 50%;
+            width: 45px;
+            display: inline-block;
+            height: 45px;
+            text-align: center;
+            background-color: #fff;
+            line-height: 45px;
+        }
+
+        .registration-form .social-icons a:hover {
+            text-decoration: none;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 576px) {
+            .registration-form form {
+                padding: 0px 20px;
+            }
+
+            .registration-form .form-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 30px;
+                line-height: 70px;
+            }
+        }
+
+
+        /* This line can be removed it was just for display on CodePen: */
+        .container {}
+
+        .slider-labels {
+            margin-top: 10px;
+        }
+
+        /* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+        .noUi-target,
+        .noUi-target * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -ms-touch-action: none;
+            touch-action: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .noUi-target {
+            position: relative;
+            direction: ltr;
+        }
+
+        .noUi-base {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            /* Fix 401 */
+        }
+
+        .noUi-origin {
+            position: absolute;
+            right: 0;
+            top: 0;
+            left: 0;
+            bottom: 0;
+        }
+
+        .noUi-handle {
+            position: relative;
+            z-index: 1;
+        }
+
+        .noUi-stacking .noUi-handle {
+            /* This class is applied to the lower origin when
+   its values is > 50%. */
+            z-index: 10;
+        }
+
+        .noUi-state-tap .noUi-origin {
+            -webkit-transition: left 0.3s, top .3s;
+            transition: left 0.3s, top .3s;
+        }
+
+        .noUi-state-drag * {
+            cursor: inherit !important;
+        }
+
+        /* Painting and performance;
+ * Browsers can paint handles in their own layer.
+ */
+        .noUi-base,
+        .noUi-handle {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        /* Slider size and handle placement;
+ */
+        .noUi-horizontal {
+            height: 4px;
+        }
+
+        .noUi-horizontal .noUi-handle {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            left: -7px;
+            top: -7px;
+            background-color: #345DBB;
+        }
+
+        /* Styling;
+ */
+        .noUi-background {
+            background: #D6D7D9;
+        }
+
+        .noUi-connect {
+            background: #345DBB;
+            -webkit-transition: background 450ms;
+            transition: background 450ms;
+        }
+
+        .noUi-origin {
+            border-radius: 2px;
+        }
+
+        .noUi-target {
+            border-radius: 2px;
+        }
+
+        .noUi-target.noUi-connect {}
+
+        /* Handles and cursors;
+ */
+        .noUi-draggable {
+            cursor: w-resize;
+        }
+
+        .noUi-vertical .noUi-draggable {
+            cursor: n-resize;
+        }
+
+        .noUi-handle {
+            cursor: default;
+            -webkit-box-sizing: content-box !important;
+            -moz-box-sizing: content-box !important;
+            box-sizing: content-box !important;
+        }
+
+        .noUi-handle:active {
+            border: 8px solid #345DBB;
+            border: 8px solid rgba(53, 93, 187, 0.38);
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            left: -14px;
+            top: -14px;
+        }
+
+        /* Disabled state;
+ */
+        [disabled].noUi-connect,
+        [disabled] .noUi-connect {
+            background: #B8B8B8;
+        }
+
+        [disabled].noUi-origin,
+        [disabled] .noUi-handle {
+            cursor: not-allowed;
+        }
+    </style>
+    <style>
+        .slidecontainer {
+            width: 100%;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+
+        .pad {
+            margin-top: 2rem;
+            margin-left: 2rem;
+        }
+
+        /* code for image upload css */
+        .container {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0 20px;
+        }
+
+        h1 small {
+            display: block;
+            font-size: 15px;
+            padding-top: 8px;
+            color: gray;
+        }
+
+        .avatar-upload {
+            position: relative;
+            max-width: 205px;
+            margin: 50px auto;
+        }
+
+        .avatar-upload .avatar-edit {
+            position: absolute;
+            right: 12px;
+            z-index: 1;
+            top: 10px;
+        }
+
+        .avatar-upload .avatar-edit input {
+            display: none;
+        }
+
+        .avatar-upload .avatar-edit input+label {
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            margin-bottom: 0;
+            border-radius: 100%;
+            background: #FFFFFF;
+            border: 1px solid transparent;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+            font-weight: normal;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .avatar-upload .avatar-edit input+label:hover {
+            background: #f1f1f1;
+            border-color: #d6d6d6;
+        }
+
+        .avatar-upload .avatar-edit input+label:after {
+            content: "\f040";
+            font-family: 'FontAwesome';
+            color: #757575;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: auto;
+        }
+
+        .avatar-upload .avatar-preview {
+            width: 192px;
+            height: 192px;
+            position: relative;
+            border-radius: 100%;
+            border: 6px solid #F8F8F8;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .avatar-upload .avatar-preview>div {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .rednote {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="/" class="btn btn-primary pad">Back</a>
+    <div class="registration-form">
+        <form>
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="password" placeholder="Company Name">
+            </div>
+            <div class="form-group">
+                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Category</label>
+                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">City</label>
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="slidecontainer">
+                    <input type="range" min="10000" max="5000000" value="50000" class="slider" id="myRange" step="5000">
+                    <p>Price Range : <span id="demo"></span> Rs</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="url" class="form-control item" id="username" placeholder="Comapany Url (Optional) ">
+            </div>
+            <div class="form-group">
+                <div class="container">
+                    <small>Upload image</small>
+                    <div class="avatar-upload">
+                        <div class="avatar-edit">
+                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                            <label for="imageUpload"></label>
+                        </div>
+                        <div class="avatar-preview">
+                            <div id="imagePreview"
+                                style="background-image: url(https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?b=1&k=20&m=1300845620&s=170667a&w=0&h=JbOeyFgAc6-3jmptv6mzXpGcAd_8xqkQa_oUK2viFr8=);">
+                            </div>
+                        </div>
+                    </div>
+                    <small class="rednote"><b>NOTE</b class="rednote"> Please provide the image of around 400px to 600px</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <button type="button" class="btn btn-block create-account">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+        }
+    </script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                    $('#imagePreview').hide();
+                    $('#imagePreview').fadeIn(650);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imageUpload").change(function () {
+            readURL(this);
+        });
+    </script>
+
+</body>
+
+</html>

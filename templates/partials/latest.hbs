@@ -1,0 +1,31 @@
+<div class="container text-lg-center">
+    <h1>Latest data</h1>
+</div>
+<section class="container">
+        <div class="row justify-content-center align-items-center w-100 h-100 mx-auto">
+            {{#each filterq}}
+            <div class="col-md-4 col-lg-3 p-2">
+                <div class="card p-3">
+                    <div class="card-block">
+                        <h4 class="card-title capi">{{this.name}}</h4>
+                        <b>Company Name</b>
+                        <h6 class="card-subtitle text-muted capi p-1">{{this.companyname}}</h6>
+                    </div>
+                    <div class="w-100 py-5 back-bg-primary cen mx:auto"
+                        style="background-image:url('{{this.imageurl}}')">
+                        <div class="my-5"></div>
+                    </div>
+                    <div class="card-block">
+                        <b>Service</b>
+                        <p class="card-text capi">{{this.services}}</p>
+                        <b>City</b>
+                        <p class="card-text capi">{{this.city}}</p>
+                        <b>Price Range</b>
+                        <p class="card-text capi">{{this.pricerange}}</p>
+                        <a href="{{this.companyurl}}">LINK</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
